@@ -16,6 +16,9 @@
                     <li>
                         <a href="{% url 'Logout' %}">Cerrar sesión</a>
                     </li>
+                    <li>
+                       <a href="{% url 'Quest' Key=1 %}" >Quest</a> 
+                    </li>
                 {% else %}
                     <li>
                         <a href="{% url 'Register' %}">Registrarse</a>

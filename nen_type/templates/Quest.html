@@ -1,0 +1,58 @@
+{% extends 'Nav/Navegacion.html' %}
+
+
+    {% block content %}
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Nen Quest</title>
+    </head>
+    <body>
+        <h1>Página {{ Key }}</h1>
+    
+        {% if Key == 1 %}
+            <p>Bienvenido a la página 1. Esta es la introducción.</p>
+        {% elif Key == 2 %}
+            <p>Contenido de la página 2.</p>
+        {% elif Key == 3 %}
+            <p>Contenido de la página 3.</p>
+        {% elif Key == 4 %}
+            <p>Contenido de la página 4.</p>
+        {% elif Key == 5 %}
+            <p>Contenido de la página 5.</p>
+        {% elif Key == 6 %}
+            <p>Contenido de la página 6.</p>
+        {% elif Key == 7 %}
+            <p>Contenido de la página 7.</p>
+        {% elif Key == 8 %}
+            <p>Contenido de la página 8.</p>
+        {% elif Key == 9 %}
+            <p>Contenido de la página 9.</p>
+        {% elif Key == 10 %}
+            <p>Contenido de la página 10. Fin de la navegación.</p>
+        {% endif %}
+    
+        <footer>
+            {% if Key > 1 %}
+            <a href="{% url 'Quest' Key=Key|add:"-1" %}">
+                <button>Atras</button>
+            </a>
+            {% endif %}
+    
+            {% if Key < 10 %}
+            
+            <a href="{% url 'Quest' Key=Key|add:"+1" %}">
+                <button>Siguiente</button>
+            </a>
+                
+            {% endif %}
+            {{ error }}
+        </footer>
+            
+        
+    </body>
+    </html>
+    
+    {% endblock %}
