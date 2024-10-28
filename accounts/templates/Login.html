@@ -1,0 +1,14 @@
+{% extends 'Nav/Navegacion.html' %}
+
+
+    {% block content %}
+    <h1>Iniciar Sesión</h1>
+    <h5>{{Error}}</h5>
+    <form method="post">
+        {{form.as_p}}
+        {% csrf_token %}
+        <button>
+            <p>Enviar</p>
+        </button>
+    </form>
+    {% endblock %}
