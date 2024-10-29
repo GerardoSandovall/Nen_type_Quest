@@ -13,9 +13,14 @@ def Quest(request, Key):
         if request.method == 'GET':
             return render(request, 'Quest.html', {'Key': Num, 'error': ''})
         else:
-            return redirect('Main')  # Ensure to return redirect
+            answer = request.POST.get('question')
+            print(request.path)  #path de donde viene el post
+            print("/Quest/"+str(Key)) #Comprobar que la respuesta viene de ahi 
+            
+            return redirect('Quest', Key)
     else:
         if request.method == 'GET':
             return render(request, 'Quest.html', {'Key': Num, 'error': 'Esta pagina no existe'})
         else:
             return redirect('Main')  # Ensure to return redirect
+

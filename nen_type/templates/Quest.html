@@ -13,25 +13,286 @@
         <h1>Página {{ Key }}</h1>
     
         {% if Key == 1 %}
-            <p>Bienvenido a la página 1. Esta es la introducción.</p>
+            <h2>¿Cuál es el animal más rápido del mundo?</h2>
+        
+            <div>
+                <img src="https://media.giphy.com/media/3o7aD9qBYfJ0ibXXb6/giphy.gif" 
+                     alt="Imagen relacionada con la pregunta" width="300">
+            </div>
+        
+            <form action="{% url 'Quest' Key=Key|add:'1' %}" method="post"  >
+                {% csrf_token %}
+                <p>
+                    <input type="radio" id="option1" name="question" value="1"  required>
+                    <label for="option1">Tigre</label>
+                </p>
+                <p>
+                    <input type="radio" id="option2" name="question" value="2">
+                    <label for="option2">Leopardo</label>
+                </p>
+                <p>
+                    <input type="radio" id="option3" name="question" value="3">
+                    <label for="option3">Halcón peregrino</label>
+                </p>
+                <p>
+                    <input type="radio" id="option4" name="question" value="4">
+                    <label for="option4">Guepardo</label>
+                </p>
+                    <button type="submit">Enviar</button>
+            </form>
+
         {% elif Key == 2 %}
-            <p>Contenido de la página 2.</p>
+        <h2>¿Cuál es el animal más rápido del mundo?</h2>
+        
+        <div>
+            <img src="https://media.giphy.com/media/3o7aD9qBYfJ0ibXXb6/giphy.gif" 
+                 alt="Imagen relacionada con la pregunta" width="300">
+        </div>
+    
+        <form action="{% url 'Quest' Key=Key|add:'1' %}" method="post">
+            {% csrf_token %}
+            <p>
+                <input type="radio" id="option1" name="question" value="1"  required>
+                <label for="option1">Tigre</label>
+            </p>
+            <p>
+                <input type="radio" id="option2" name="question" value="2">
+                <label for="option2">Leopardo</label>
+            </p>
+            <p>
+                <input type="radio" id="option3" name="question" value="3">
+                <label for="option3">Halcón peregrino</label>
+            </p>
+            <p>
+                <input type="radio" id="option4" name="question" value="4">
+                <label for="option4">Guepardo</label>
+            </p>
+                <button type="submit">Enviar</button>
+        </form>
         {% elif Key == 3 %}
-            <p>Contenido de la página 3.</p>
+        <h2>¿Cuál es el animal más rápido del mundo?</h2>
+        
+        <div>
+            <img src="https://media.giphy.com/media/3o7aD9qBYfJ0ibXXb6/giphy.gif" 
+                 alt="Imagen relacionada con la pregunta" width="300">
+        </div>
+    
+        <form action="{% url 'Quest' Key=Key|add:'1' %}" method="post">
+            {% csrf_token %}
+            <p>
+                <input type="radio" id="option1" name="question" value="1"  required>
+                <label for="option1">Tigre</label>
+            </p>
+            <p>
+                <input type="radio" id="option2" name="question" value="2">
+                <label for="option2">Leopardo</label>
+            </p>
+            <p>
+                <input type="radio" id="option3" name="question" value="3">
+                <label for="option3">Halcón peregrino</label>
+            </p>
+            <p>
+                <input type="radio" id="option4" name="question" value="4">
+                <label for="option4">Guepardo</label>
+            </p>
+                <button type="submit">Enviar</button>
+        </form>
         {% elif Key == 4 %}
-            <p>Contenido de la página 4.</p>
+        <h2>¿Cuál es el animal más rápido del mundo?</h2>
+        
+        <div>
+            <img src="https://media.giphy.com/media/3o7aD9qBYfJ0ibXXb6/giphy.gif" 
+                 alt="Imagen relacionada con la pregunta" width="300">
+        </div>
+    
+        <form action="{% url 'Quest' Key=Key|add:'1' %}" method="post">
+            {% csrf_token %}
+            <p>
+                <input type="radio" id="option1" name="question" value="1"  required>
+                <label for="option1">Tigre</label>
+            </p>
+            <p>
+                <input type="radio" id="option2" name="question" value="2">
+                <label for="option2">Leopardo</label>
+            </p>
+            <p>
+                <input type="radio" id="option3" name="question" value="3">
+                <label for="option3">Halcón peregrino</label>
+            </p>
+            <p>
+                <input type="radio" id="option4" name="question" value="4">
+                <label for="option4">Guepardo</label>
+            </p>
+                <button type="submit">Enviar</button>
+        </form>
         {% elif Key == 5 %}
-            <p>Contenido de la página 5.</p>
+        <h2>¿Cuál es el animal más rápido del mundo?</h2>
+        
+        <div>
+            <img src="https://media.giphy.com/media/3o7aD9qBYfJ0ibXXb6/giphy.gif" 
+                 alt="Imagen relacionada con la pregunta" width="300">
+        </div>
+    
+        <form action="{% url 'Quest' Key=Key|add:'1' %}" method="post">
+            {% csrf_token %}
+            <p>
+                <input type="radio" id="option1" name="question" value="1"  required>
+                <label for="option1">Tigre</label>
+            </p>
+            <p>
+                <input type="radio" id="option2" name="question" value="2">
+                <label for="option2">Leopardo</label>
+            </p>
+            <p>
+                <input type="radio" id="option3" name="question" value="3">
+                <label for="option3">Halcón peregrino</label>
+            </p>
+            <p>
+                <input type="radio" id="option4" name="question" value="4">
+                <label for="option4">Guepardo</label>
+            </p>
+                <button type="submit">Enviar</button>
+        </form>
         {% elif Key == 6 %}
-            <p>Contenido de la página 6.</p>
+        <h2>¿Cuál es el animal más rápido del mundo?</h2>
+        
+        <div>
+            <img src="https://media.giphy.com/media/3o7aD9qBYfJ0ibXXb6/giphy.gif" 
+                 alt="Imagen relacionada con la pregunta" width="300">
+        </div>
+    
+        <form action="{% url 'Quest' Key=Key|add:'1' %}" method="post">
+            {% csrf_token %}
+            <p>
+                <input type="radio" id="option1" name="question" value="1"  required>
+                <label for="option1">Tigre</label>
+            </p>
+            <p>
+                <input type="radio" id="option2" name="question" value="2">
+                <label for="option2">Leopardo</label>
+            </p>
+            <p>
+                <input type="radio" id="option3" name="question" value="3">
+                <label for="option3">Halcón peregrino</label>
+            </p>
+            <p>
+                <input type="radio" id="option4" name="question" value="4">
+                <label for="option4">Guepardo</label>
+            </p>
+                <button type="submit">Enviar</button>
+        </form>
         {% elif Key == 7 %}
-            <p>Contenido de la página 7.</p>
+        <h2>¿Cuál es el animal más rápido del mundo?</h2>
+        
+        <div>
+            <img src="https://media.giphy.com/media/3o7aD9qBYfJ0ibXXb6/giphy.gif" 
+                 alt="Imagen relacionada con la pregunta" width="300">
+        </div>
+    
+        <form action="{% url 'Quest' Key=Key|add:'1' %}" method="post">
+            {% csrf_token %}
+            <p>
+                <input type="radio" id="option1" name="question" value="1"  required>
+                <label for="option1">Tigre</label>
+            </p>
+            <p>
+                <input type="radio" id="option2" name="question" value="2">
+                <label for="option2">Leopardo</label>
+            </p>
+            <p>
+                <input type="radio" id="option3" name="question" value="3">
+                <label for="option3">Halcón peregrino</label>
+            </p>
+            <p>
+                <input type="radio" id="option4" name="question" value="4">
+                <label for="option4">Guepardo</label>
+            </p>
+                <button type="submit">Enviar</button>
+        </form>
         {% elif Key == 8 %}
-            <p>Contenido de la página 8.</p>
+        <h2>¿Cuál es el animal más rápido del mundo?</h2>
+        
+        <div>
+            <img src="https://media.giphy.com/media/3o7aD9qBYfJ0ibXXb6/giphy.gif" 
+                 alt="Imagen relacionada con la pregunta" width="300">
+        </div>
+    
+        <form action="{% url 'Quest' Key=Key|add:'1' %}" method="post">
+            {% csrf_token %}
+            <p>
+                <input type="radio" id="option1" name="question" value="1"  required>
+                <label for="option1">Tigre</label>
+            </p>
+            <p>
+                <input type="radio" id="option2" name="question" value="2">
+                <label for="option2">Leopardo</label>
+            </p>
+            <p>
+                <input type="radio" id="option3" name="question" value="3">
+                <label for="option3">Halcón peregrino</label>
+            </p>
+            <p>
+                <input type="radio" id="option4" name="question" value="4">
+                <label for="option4">Guepardo</label>
+            </p>
+                <button type="submit">Enviar</button>
+        </form>
         {% elif Key == 9 %}
-            <p>Contenido de la página 9.</p>
+        <h2>¿Cuál es el animal más rápido del mundo?</h2>
+        
+        <div>
+            <img src="https://media.giphy.com/media/3o7aD9qBYfJ0ibXXb6/giphy.gif" 
+                 alt="Imagen relacionada con la pregunta" width="300">
+        </div>
+    
+        <form action="{% url 'Quest' Key=Key|add:'1' %}" method="post">
+            {% csrf_token %}
+            <p>
+                <input type="radio" id="option1" name="question" value="1"  required>
+                <label for="option1">Tigre</label>
+            </p>
+            <p>
+                <input type="radio" id="option2" name="question" value="2">
+                <label for="option2">Leopardo</label>
+            </p>
+            <p>
+                <input type="radio" id="option3" name="question" value="3">
+                <label for="option3">Halcón peregrino</label>
+            </p>
+            <p>
+                <input type="radio" id="option4" name="question" value="4">
+                <label for="option4">Guepardo</label>
+            </p>
+                <button type="submit">Enviar</button>
+        </form>
         {% elif Key == 10 %}
-            <p>Contenido de la página 10. Fin de la navegación.</p>
+        <h2>¿Cuál es el animal más rápido del mundo?</h2>
+        
+        <div>
+            <img src="https://media.giphy.com/media/3o7aD9qBYfJ0ibXXb6/giphy.gif" 
+                 alt="Imagen relacionada con la pregunta" width="300">
+        </div>
+    
+        <form action="{% url 'Quest' Key=Key|add:'1' %}" method="post">
+            {% csrf_token %}
+            <p>
+                <input type="radio" id="option1" name="question" value="1"  required>
+                <label for="option1">Tigre</label>
+            </p>
+            <p>
+                <input type="radio" id="option2" name="question" value="2">
+                <label for="option2">Leopardo</label>
+            </p>
+            <p>
+                <input type="radio" id="option3" name="question" value="3">
+                <label for="option3">Halcón peregrino</label>
+            </p>
+            <p>
+                <input type="radio" id="option4" name="question" value="4">
+                <label for="option4">Guepardo</label>
+            </p>
+                <button type="submit">Enviar</button>
+        </form>
         {% endif %}
     
         <footer>
