@@ -1,319 +1,192 @@
 {% extends 'Nav/Navegacion.html' %}
 
 
-    {% block content %}
-    <!DOCTYPE html>
-    <html lang="en">
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>Nen Quest</title>
-    </head>
-    <body>
-        <h1>Página {{ Key }}</h1>
+{% block content %}
+{% if Key == 1 %}
+    <h2>¿Cómo reaccionas cuando algo no sale como lo planeaste?</h2>
     
-        {% if Key == 1 %}
-            <h2>¿Cuál es el animal más rápido del mundo?</h2>
-        
-            <div>
-                <img src="https://media.giphy.com/media/3o7aD9qBYfJ0ibXXb6/giphy.gif" 
-                     alt="Imagen relacionada con la pregunta" width="300">
-            </div>
-        
-            <form action="{% url 'Quest' Key=Key|add:'1' %}" method="post"  >
-                {% csrf_token %}
-                <p>
-                    <input type="radio" id="option1" name="question" value="1"  required>
-                    <label for="option1">Tigre</label>
-                </p>
-                <p>
-                    <input type="radio" id="option2" name="question" value="2">
-                    <label for="option2">Leopardo</label>
-                </p>
-                <p>
-                    <input type="radio" id="option3" name="question" value="3">
-                    <label for="option3">Halcón peregrino</label>
-                </p>
-                <p>
-                    <input type="radio" id="option4" name="question" value="4">
-                    <label for="option4">Guepardo</label>
-                </p>
-                    <button type="submit">Enviar</button>
-            </form>
+    <form action="{% url 'Quest' Key=Key|add:'1' %}" method="post">
+        {% csrf_token %}
+        <p>
+            <input type="radio" id="option5" name="question" value="5" required>
+            <label for="option5">Evalúo la situación y avanzo con cuidado para evitar nuevos problemas.</label>
+        </p>
+        <p>
+            <input type="radio" id="option3" name="question" value="3">
+            <label for="option3">Cambio de rumbo y busco otra cosa que me interese más.</label>
+        </p>
+        <p>
+            <input type="radio" id="option6" name="question" value="6">
+            <label for="option6">Busco una solución creativa, incluso si es poco convencional.</label>
+        </p>
+        <p>
+            <input type="radio" id="option1" name="question" value="1">
+            <label for="option1">Hago lo primero que se me ocurre para intentar arreglarlo.</label>
+        </p>
+        <p>
+            <input type="radio" id="option4" name="question" value="4">
+            <label for="option4">Respiro hondo y trato de calmarme antes de decidir qué hacer.</label>
+        </p>
+        <p>
+            <input type="radio" id="option2" name="question" value="2">
+            <label for="option2">Me frustro rápidamente y quiero solucionarlo de inmediato.</label>
+        </p>
+        <button type="submit">Enviar</button>
+    </form>
 
-        {% elif Key == 2 %}
-        <h2>¿Cuál es el animal más rápido del mundo?</h2>
-        
-        <div>
-            <img src="https://media.giphy.com/media/3o7aD9qBYfJ0ibXXb6/giphy.gif" 
-                 alt="Imagen relacionada con la pregunta" width="300">
-        </div>
-    
-        <form action="{% url 'Quest' Key=Key|add:'1' %}" method="post">
-            {% csrf_token %}
-            <p>
-                <input type="radio" id="option1" name="question" value="1"  required>
-                <label for="option1">Tigre</label>
-            </p>
-            <p>
-                <input type="radio" id="option2" name="question" value="2">
-                <label for="option2">Leopardo</label>
-            </p>
-            <p>
-                <input type="radio" id="option3" name="question" value="3">
-                <label for="option3">Halcón peregrino</label>
-            </p>
-            <p>
-                <input type="radio" id="option4" name="question" value="4">
-                <label for="option4">Guepardo</label>
-            </p>
-                <button type="submit">Enviar</button>
-        </form>
-        {% elif Key == 3 %}
-        <h2>¿Cuál es el animal más rápido del mundo?</h2>
-        
-        <div>
-            <img src="https://media.giphy.com/media/3o7aD9qBYfJ0ibXXb6/giphy.gif" 
-                 alt="Imagen relacionada con la pregunta" width="300">
-        </div>
-    
-        <form action="{% url 'Quest' Key=Key|add:'1' %}" method="post">
-            {% csrf_token %}
-            <p>
-                <input type="radio" id="option1" name="question" value="1"  required>
-                <label for="option1">Tigre</label>
-            </p>
-            <p>
-                <input type="radio" id="option2" name="question" value="2">
-                <label for="option2">Leopardo</label>
-            </p>
-            <p>
-                <input type="radio" id="option3" name="question" value="3">
-                <label for="option3">Halcón peregrino</label>
-            </p>
-            <p>
-                <input type="radio" id="option4" name="question" value="4">
-                <label for="option4">Guepardo</label>
-            </p>
-                <button type="submit">Enviar</button>
-        </form>
-        {% elif Key == 4 %}
-        <h2>¿Cuál es el animal más rápido del mundo?</h2>
-        
-        <div>
-            <img src="https://media.giphy.com/media/3o7aD9qBYfJ0ibXXb6/giphy.gif" 
-                 alt="Imagen relacionada con la pregunta" width="300">
-        </div>
-    
-        <form action="{% url 'Quest' Key=Key|add:'1' %}" method="post">
-            {% csrf_token %}
-            <p>
-                <input type="radio" id="option1" name="question" value="1"  required>
-                <label for="option1">Tigre</label>
-            </p>
-            <p>
-                <input type="radio" id="option2" name="question" value="2">
-                <label for="option2">Leopardo</label>
-            </p>
-            <p>
-                <input type="radio" id="option3" name="question" value="3">
-                <label for="option3">Halcón peregrino</label>
-            </p>
-            <p>
-                <input type="radio" id="option4" name="question" value="4">
-                <label for="option4">Guepardo</label>
-            </p>
-                <button type="submit">Enviar</button>
-        </form>
-        {% elif Key == 5 %}
-        <h2>¿Cuál es el animal más rápido del mundo?</h2>
-        
-        <div>
-            <img src="https://media.giphy.com/media/3o7aD9qBYfJ0ibXXb6/giphy.gif" 
-                 alt="Imagen relacionada con la pregunta" width="300">
-        </div>
-    
-        <form action="{% url 'Quest' Key=Key|add:'1' %}" method="post">
-            {% csrf_token %}
-            <p>
-                <input type="radio" id="option1" name="question" value="1"  required>
-                <label for="option1">Tigre</label>
-            </p>
-            <p>
-                <input type="radio" id="option2" name="question" value="2">
-                <label for="option2">Leopardo</label>
-            </p>
-            <p>
-                <input type="radio" id="option3" name="question" value="3">
-                <label for="option3">Halcón peregrino</label>
-            </p>
-            <p>
-                <input type="radio" id="option4" name="question" value="4">
-                <label for="option4">Guepardo</label>
-            </p>
-                <button type="submit">Enviar</button>
-        </form>
-        {% elif Key == 6 %}
-        <h2>¿Cuál es el animal más rápido del mundo?</h2>
-        
-        <div>
-            <img src="https://media.giphy.com/media/3o7aD9qBYfJ0ibXXb6/giphy.gif" 
-                 alt="Imagen relacionada con la pregunta" width="300">
-        </div>
-    
-        <form action="{% url 'Quest' Key=Key|add:'1' %}" method="post">
-            {% csrf_token %}
-            <p>
-                <input type="radio" id="option1" name="question" value="1"  required>
-                <label for="option1">Tigre</label>
-            </p>
-            <p>
-                <input type="radio" id="option2" name="question" value="2">
-                <label for="option2">Leopardo</label>
-            </p>
-            <p>
-                <input type="radio" id="option3" name="question" value="3">
-                <label for="option3">Halcón peregrino</label>
-            </p>
-            <p>
-                <input type="radio" id="option4" name="question" value="4">
-                <label for="option4">Guepardo</label>
-            </p>
-                <button type="submit">Enviar</button>
-        </form>
-        {% elif Key == 7 %}
-        <h2>¿Cuál es el animal más rápido del mundo?</h2>
-        
-        <div>
-            <img src="https://media.giphy.com/media/3o7aD9qBYfJ0ibXXb6/giphy.gif" 
-                 alt="Imagen relacionada con la pregunta" width="300">
-        </div>
-    
-        <form action="{% url 'Quest' Key=Key|add:'1' %}" method="post">
-            {% csrf_token %}
-            <p>
-                <input type="radio" id="option1" name="question" value="1"  required>
-                <label for="option1">Tigre</label>
-            </p>
-            <p>
-                <input type="radio" id="option2" name="question" value="2">
-                <label for="option2">Leopardo</label>
-            </p>
-            <p>
-                <input type="radio" id="option3" name="question" value="3">
-                <label for="option3">Halcón peregrino</label>
-            </p>
-            <p>
-                <input type="radio" id="option4" name="question" value="4">
-                <label for="option4">Guepardo</label>
-            </p>
-                <button type="submit">Enviar</button>
-        </form>
-        {% elif Key == 8 %}
-        <h2>¿Cuál es el animal más rápido del mundo?</h2>
-        
-        <div>
-            <img src="https://media.giphy.com/media/3o7aD9qBYfJ0ibXXb6/giphy.gif" 
-                 alt="Imagen relacionada con la pregunta" width="300">
-        </div>
-    
-        <form action="{% url 'Quest' Key=Key|add:'1' %}" method="post">
-            {% csrf_token %}
-            <p>
-                <input type="radio" id="option1" name="question" value="1"  required>
-                <label for="option1">Tigre</label>
-            </p>
-            <p>
-                <input type="radio" id="option2" name="question" value="2">
-                <label for="option2">Leopardo</label>
-            </p>
-            <p>
-                <input type="radio" id="option3" name="question" value="3">
-                <label for="option3">Halcón peregrino</label>
-            </p>
-            <p>
-                <input type="radio" id="option4" name="question" value="4">
-                <label for="option4">Guepardo</label>
-            </p>
-                <button type="submit">Enviar</button>
-        </form>
-        {% elif Key == 9 %}
-        <h2>¿Cuál es el animal más rápido del mundo?</h2>
-        
-        <div>
-            <img src="https://media.giphy.com/media/3o7aD9qBYfJ0ibXXb6/giphy.gif" 
-                 alt="Imagen relacionada con la pregunta" width="300">
-        </div>
-    
-        <form action="{% url 'Quest' Key=Key|add:'1' %}" method="post">
-            {% csrf_token %}
-            <p>
-                <input type="radio" id="option1" name="question" value="1"  required>
-                <label for="option1">Tigre</label>
-            </p>
-            <p>
-                <input type="radio" id="option2" name="question" value="2">
-                <label for="option2">Leopardo</label>
-            </p>
-            <p>
-                <input type="radio" id="option3" name="question" value="3">
-                <label for="option3">Halcón peregrino</label>
-            </p>
-            <p>
-                <input type="radio" id="option4" name="question" value="4">
-                <label for="option4">Guepardo</label>
-            </p>
-                <button type="submit">Enviar</button>
-        </form>
-        {% elif Key == 10 %}
-        <h2>¿Cuál es el animal más rápido del mundo?</h2>
-        
-        <div>
-            <img src="https://media.giphy.com/media/3o7aD9qBYfJ0ibXXb6/giphy.gif" 
-                 alt="Imagen relacionada con la pregunta" width="300">
-        </div>
-    
-        <form action="{% url 'Quest' Key=Key|add:'1' %}" method="post">
-            {% csrf_token %}
-            <p>
-                <input type="radio" id="option1" name="question" value="1"  required>
-                <label for="option1">Tigre</label>
-            </p>
-            <p>
-                <input type="radio" id="option2" name="question" value="2">
-                <label for="option2">Leopardo</label>
-            </p>
-            <p>
-                <input type="radio" id="option3" name="question" value="3">
-                <label for="option3">Halcón peregrino</label>
-            </p>
-            <p>
-                <input type="radio" id="option4" name="question" value="4">
-                <label for="option4">Guepardo</label>
-            </p>
-                <button type="submit">Enviar</button>
-        </form>
-        {% endif %}
-    
-        <footer>
-            {% if Key > 1 %}
-            <a href="{% url 'Quest' Key=Key|add:"-1" %}">
-                <button>Atras</button>
-            </a>
+{% elif Key == 2 %}
+    <h2>Cuando se te presenta una nueva oportunidad, ¿qué factor influye más en tu decisión?</h2>
+
+    <form action="{% url 'Quest' Key=Key|add:'1' %}" method="post">
+        {% csrf_token %}
+        <p>
+            <input type="radio" id="option4" name="question" value="4" required>
+            <label for="option4">Analizo los pros y contras de manera lógica y objetiva.</label>
+        </p>
+        <p>
+            <input type="radio" id="option1" name="question" value="1">
+            <label for="option1">Mi instinto, simplemente siento que es lo correcto o no.</label>
+        </p>
+        <p>
+            <input type="radio" id="option5" name="question" value="5">
+            <label for="option5">Evalúo si la oportunidad encaja en mi plan a largo plazo y estructura personal.</label>
+        </p>
+        <p>
+            <input type="radio" id="option3" name="question" value="3">
+            <label for="option3">Considero cómo esta oportunidad puede impactar mis relaciones y emociones.</label>
+        </p>
+        <p>
+            <input type="radio" id="option2" name="question" value="2">
+            <label for="option2">Mi entusiasmo por la oportunidad y la pasión que siento al pensar en ella.</label>
+        </p>
+        <p>
+            <input type="radio" id="option6" name="question" value="6">
+            <label for="option6">Pienso en cómo puedo desarrollarme de manera independiente con esta oportunidad.</label>
+        </p>
+        <button type="submit">Enviar</button>
+    </form>
+
+{% elif Key == 3 %}
+    <h2>Cuando alguien te critica o te hace un comentario negativo, ¿cómo respondes?</h2>
+
+    <form action="{% url 'Quest' Key=Key|add:'1' %}" method="post">
+        {% csrf_token %}
+        <p>
+            <input type="radio" id="option5" name="question" value="5" required>
+            <label for="option5">Escucho cuidadosamente y considero si hay algo útil en la crítica antes de responder.</label>
+        </p>
+        <p>
+            <input type="radio" id="option6" name="question" value="6">
+            <label for="option6">Respondo con un comentario inesperado o con humor para relajar la situación.</label>
+        </p>
+        <p>
+            <input type="radio" id="option3" name="question" value="3">
+            <label for="option3">Cambio de tema o hago un comentario irónico para desviar la atención.</label>
+        </p>
+        <p>
+            <input type="radio" id="option2" name="question" value="2">
+            <label for="option2">Me molesto rápidamente y deseo que la conversación termine pronto.</label>
+        </p>
+        <p>
+            <input type="radio" id="option1" name="question" value="1">
+            <label for="option1">Respondo de inmediato sin pensar mucho en mis palabras.</label>
+        </p>
+        <p>
+            <input type="radio" id="option4" name="question" value="4">
+            <label for="option4">Mantengo la calma y controlo mis emociones para responder de manera tranquila.</label>
+        </p>
+        <button type="submit">Enviar</button>
+    </form>
+
+{% elif Key == 4 %}
+    <h2>Cuando alguien interrumpe tus planes, ¿cómo reaccionas?</h2>
+
+    <form action="{% url 'Quest' Key=Key|add:'1' %}" method="post">
+        {% csrf_token %}
+        <p>
+            <input type="radio" id="option4" name="question" value="4" required>
+            <label for="option4">Intento que la otra persona entienda lo importante que es para mí seguir mi plan, sin decirlo directamente.</label>
+        </p>
+        <p>
+            <input type="radio" id="option5" name="question" value="5">
+            <label for="option5">Me mantengo calmado y me esfuerzo por resolverlo de manera formal.</label>
+        </p>
+        <p>
+            <input type="radio" id="option2" name="question" value="2">
+            <label for="option2">Me molesta mucho y no puedo ocultar mi frustración.</label>
+        </p>
+        <p>
+            <input type="radio" id="option1" name="question" value="1">
+            <label for="option1">Me adapto fácilmente y trato de no complicarme.</label>
+        </p>
+        <p>
+            <input type="radio" id="option6" name="question" value="6">
+            <label for="option6">Trato de volver a mis propios planes lo antes posible, centrándome en lo que me importa.</label>
+        </p>
+        <p>
+            <input type="radio" id="option3" name="question" value="3">
+            <label for="option3">Intento conseguir que las cosas se ajusten a lo que quiero.</label>
+        </p>
+        <button type="submit">Enviar</button>
+    </form>
+
+{% elif Key == 5 %}
+    <h2>¿Cómo te enfrentas a un reto en el trabajo o en los estudios?</h2>
+
+    <form action="{% url 'Quest' Key=Key|add:'1' %}" method="post">
+        {% csrf_token %}
+        <p>
+            <input type="radio" id="option5" name="question" value="5" required>
+            <label for="option5">Me concentro en lo que se debe hacer y sigo los pasos necesarios para resolver el reto correctamente.</label>
+        </p>
+        <p>
+            <input type="radio" id="option6" name="question" value="6">
+            <label for="option6">Enfoco mis esfuerzos en los aspectos que más me interesan del reto.</label>
+        </p>
+        <p>
+            <input type="radio" id="option2" name="question" value="2">
+            <label for="option2">Si me cuesta trabajo, me irrito fácilmente.</label>
+        </p>
+        <p>
+            <input type="radio" id="option4" name="question" value="4">
+            <label for="option4">Hago que otros se involucren y colaboren para facilitarme el reto.</label>
+        </p>
+        <p>
+            <input type="radio" id="option1" name="question" value="1">
+            <label for="option1">Lo enfrento con sencillez y hago lo que pueda sin complicarme.</label>
+        </p>
+        <p>
+            <input type="radio" id="option3" name="question" value="3">
+            <label for="option3">Me esfuerzo en superarlo porque es importante para mí lograr mis metas.</label>
+        </p>
+        <button type="submit">Enviar</button>
+    </form>
+{% endif %}
+{% if Key == 6 %}
+    <h2>Esta es una página final con solo un texto informativo.</h2>
+    <p>Gracias por participar en esta encuesta. Esperamos que hayas disfrutado el proceso y que la información recopilada sea de ayuda para mejorar nuestras iniciativas.</p>
+{% endif %}
+
+    <footer>
+        {% if  Key > 1 %}
+            {% if  Key < 6 %}
+                <a href="{% url 'Quest' Key=Key|add:" -1" %}">
+                    <button>Atras</button>
+                </a>
             {% endif %}
-    
-            {% if Key < 10 %}
-            
-            <a href="{% url 'Quest' Key=Key|add:"+1" %}">
-                <button>Siguiente</button>
+        {% endif %}
+
+        {% if Key < 5 %} <a href="{% url 'Quest' Key=Key|add:" +1" %}">
+            <button>Siguiente</button>
             </a>
-                
+
             {% endif %}
             {{ error }}
-        </footer>
-            
-        
-    </body>
-    </html>
-    
-    {% endblock %}
+    </footer>
+
+
+</body>
+
+</html>
+
+{% endblock %}
