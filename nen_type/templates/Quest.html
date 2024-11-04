@@ -168,22 +168,8 @@
 {% endif %}
 
     <footer>
-        {% if  Key > 1 %}
-            {% if  Key < 6 %}
-                <a href="{% url 'Quest' Key=Key|add:" -1" %}">
-                    <button>Atras</button>
-                </a>
-            {% endif %}
-        {% endif %}
-
-        {% if Key < 5 %} <a href="{% url 'Quest' Key=Key|add:" +1" %}">
-            <button>Siguiente</button>
-            </a>
-
-            {% endif %}
-            {{ error }}
+        <h1>{{error}}</h1>
     </footer>
-
 
 </body>
 
