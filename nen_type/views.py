@@ -17,15 +17,22 @@ def Quest(request, Key):
         nen_points, created = NenPoints.objects.get_or_create(user=request.user)
         Points = get_object_or_404(NenPoints, user= request.user)
 
-        #Solo esta guardando 30 puntos y hay que ver como recorremos los tipos para que se escriban
+
+        if Points.Num_answers == 0:
+
+            answerComplete = 10
+
+        else:
+
+            answerComplete = Points.Num_answers*10
 
         Type_Probability = [
-        {"type": "Enhancer", "probability": (Points.Enhancer / 50) * 100},
-        {"type": "Emitter", "probability": (Points.Emitter / 50) * 100},
-        {"type": "Transmutator", "probability": (Points.Transmutator / 50) * 100},
-        {"type": "Manipulator", "probability": (Points.Manipulator / 50) * 100},
-        {"type": "Conjurer", "probability": (Points.Conjurer / 50) * 100},
-        {"type": "Specialist", "probability": (Points.Specialist / 50) * 100},
+        {"type": "Enhancer", "probability": (Points.Enhancer / answerComplete ) * 100},
+        {"type": "Emitter", "probability": (Points.Emitter / answerComplete ) * 100},
+        {"type": "Transmutator", "probability": (Points.Transmutator / answerComplete ) * 100},
+        {"type": "Manipulator", "probability": (Points.Manipulator / answerComplete) * 100},
+        {"type": "Conjurer", "probability": (Points.Conjurer / answerComplete) * 100},
+        {"type": "Specialist", "probability": (Points.Specialist / answerComplete) * 100},
          ]
 
 
@@ -43,26 +50,32 @@ def Quest(request, Key):
                 return render(request, 'Quest.html', {'Key': Key, 'error': 'Please select an option'})
 
             # Retrieve or create NenPoints object for the user
-            nen_points, created = NenPoints.objects.get_or_create(user=request.user)
 
             # gn points based on the answer selected
             if answer == '1':
                 nen_points.Enhancer += 10
+
             elif answer == '2':
                 nen_points.Emitter += 10
+
             elif answer == '3':
                 nen_points.Transmutator += 10
+
             elif answer == '4':
                 nen_points.Manipulator += 10
+
             elif answer == '5':
                 nen_points.Conjurer += 10
+
             elif answer == '6':
                 nen_points.Specialist += 10
+
             else:
                 return render(request, 'Quest.html', {'Key': Key, 'error': 'Invalid answer'})
             
-           
+            nen_points.Num_answers += 1
             Validation = Points.Enhancer + Points.Emitter + Points.Transmutator + Points.Manipulator + Points.Conjurer + Points.Specialist
+            print(Validation)
 
             if Validation == 50:
                 if answer == '1':
@@ -107,7 +120,10 @@ def Quest(request, Key):
                     nen_points.Manipulator = 0
                     nen_points.Conjurer = 0
                     nen_points.Specialist = 10
+                
+                nen_points.Num_answers = 1
                 nen_points.save()
+
             else:
                 nen_points.save()
                 if Validation == 40:

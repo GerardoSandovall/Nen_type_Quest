@@ -10,6 +10,7 @@ class NenPoints(models.Model):
     Specialist = models.IntegerField(default=0)
     user = models.ForeignKey(User, on_delete=models.CASCADE)
     answered_fiel = models.BooleanField(default=False)
+    Num_answers= models.IntegerField(default=0)
 
     def __str__(self):
         return f"{self.user.username} - Nen Points"
