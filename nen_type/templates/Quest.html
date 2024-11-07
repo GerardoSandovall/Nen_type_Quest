@@ -168,6 +168,20 @@
 {% endif %}
 
     <footer>
+ 
+
+        <h1>Probabilidades de Tipos</h1>
+        {% for i in List %}
+            <div>
+                <h2>{{ i.type }}</h2>
+                <div class="progress-bar">
+                    <div class="progress">
+                        {{ i.probability }}%
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+
         <h1>{{error}}</h1>
     </footer>
 

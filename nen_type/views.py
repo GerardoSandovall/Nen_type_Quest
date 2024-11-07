@@ -14,12 +14,27 @@ def Quest(request, Key):
     # Valid range check for Key
     if 1 <= Key <= 6:
         # GET Request - Show question page
+        nen_points, created = NenPoints.objects.get_or_create(user=request.user)
+        Points = get_object_or_404(NenPoints, user= request.user)
+
+        #Solo esta guardando 30 puntos y hay que ver como recorremos los tipos para que se escriban
+
+        Type_Probability = [
+        {"type": "Enhancer", "probability": (Points.Enhancer / 50) * 100},
+        {"type": "Emitter", "probability": (Points.Emitter / 50) * 100},
+        {"type": "Transmutator", "probability": (Points.Transmutator / 50) * 100},
+        {"type": "Manipulator", "probability": (Points.Manipulator / 50) * 100},
+        {"type": "Conjurer", "probability": (Points.Conjurer / 50) * 100},
+        {"type": "Specialist", "probability": (Points.Specialist / 50) * 100},
+         ]
+
+
         if request.method == 'GET':
             Type_is_know, created = NenPoints.objects.get_or_create(user=request.user)
             if Type_is_know.answered_fiel == False:
-                return render(request, 'Quest.html', {'Key': Key, 'error': ''})
+                return render(request, 'Quest.html', {'Key': Key, 'error': '', 'List': Type_Probability})
             else:
-                return render(request, 'Quest.html', {'Key': Key, 'error': 'Updating quest'})
+                return render(request, 'Quest.html', {'Key': Key, 'error': 'Updating quest', 'List': Type_Probability, })
         
         # POST Request - Process answer submission
         elif request.method == 'POST':
@@ -30,7 +45,7 @@ def Quest(request, Key):
             # Retrieve or create NenPoints object for the user
             nen_points, created = NenPoints.objects.get_or_create(user=request.user)
 
-            # Assign points based on the answer selected
+            # gn points based on the answer selected
             if answer == '1':
                 nen_points.Enhancer += 10
             elif answer == '2':
@@ -46,7 +61,7 @@ def Quest(request, Key):
             else:
                 return render(request, 'Quest.html', {'Key': Key, 'error': 'Invalid answer'})
             
-            Points = get_object_or_404(NenPoints, user= request.user)
+           
             Validation = Points.Enhancer + Points.Emitter + Points.Transmutator + Points.Manipulator + Points.Conjurer + Points.Specialist
 
             if Validation == 50:
@@ -98,7 +113,6 @@ def Quest(request, Key):
                 if Validation == 40:
                     nen_points.answered_fiel = True
                     nen_points.save()
-
 
             # Redirect to the next question or a final page if Key == 6
             return redirect('Quest', Key)
