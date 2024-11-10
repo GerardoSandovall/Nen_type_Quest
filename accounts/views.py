@@ -16,20 +16,25 @@ def Register(request):
         return render(request, 'Register.html', 
                   {'form': UserCreationForm})
     else:
-        if request.POST['password1'] == request.POST['password2']:
-            try:
-                user = User.objects.create_user(username= request.POST['username'], password=request.POST['password1'])
-                user.save()
-                login(request, user)
-                return redirect('Main')
-            except IntegrityError:
-                Error= 'User alredy exist'
+        if request.POST['password1'] == '' or request.POST['password2'] == '':
+            Error= 'No has ingresado las contraseñas'
             return render(request, 'Register.html', 
                   {'form': UserCreationForm, 'Error':Error})
         else:
-            Error= 'password does not match'
-            return render(request, 'Register.html', 
-                  {'form': UserCreationForm, 'Error':Error})
+            if request.POST['password1'] == request.POST['password2']:
+                try:
+                    user = User.objects.create_user(username= request.POST['username'], password=request.POST['password1'])
+                    user.save()
+                    login(request, user)
+                    return redirect('Main')
+                except IntegrityError:
+                    Error= 'User alredy exist'
+                return render(request, 'Register.html', 
+                    {'form': UserCreationForm, 'Error':Error})
+            else:
+                Error= 'password does not match'
+                return render(request, 'Register.html', 
+                    {'form': UserCreationForm, 'Error':Error})
         
 #Inicio de sesion
 def Login(request):

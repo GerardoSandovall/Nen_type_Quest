@@ -2,9 +2,12 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .models import NenPoints
+import random
+
 
 @login_required
 def Quest(request, Key):
+    
     # Convert Key to integer if possible, or show an error if not
     try:
         Key = int(Key)
@@ -129,10 +132,34 @@ def Quest(request, Key):
                 if Validation == 40:
                     nen_points.answered_fiel = True
                     nen_points.save()
+                    return redirect('Results')
 
             # Redirect to the next question or a final page if Key == 6
             return redirect('Quest', Key)
 
     # Handle invalid Key range for GET and POST requests
     return render(request, 'Quest.html', {'Key': Key, 'error': 'This page does not exist'})
+
+@login_required
+def Results(request):
+    nen_points, created = NenPoints.objects.get_or_create(user=request.user)
+
+    if request.method == 'GET':
+        nen_points.Emitter
+
+        Scores_Names = [('Enchancer', nen_points.Enhancer), ('Emitter', nen_points.Emitter),('Transmutator', nen_points.Transmutator), ('Manipulator', nen_points.Manipulator),('Conjurer', nen_points.Conjurer) ,('Especialist', nen_points.Specialist)] 
+
+        maxPoints = max(Scores for _, Scores in Scores_Names)
+    
+    # Filtra los puntajes que igualan al puntaje máximo
+        sameValue = [Names for Names, Scores in Scores_Names if Scores == maxPoints]
+    
+    # Selecciona al azar uno de los empatados
+        selected = random.choice(sameValue)
+    
+
+        
+        return render(request, 'Results/Result.html' , { 'Key': selected } )
+    else:
+       return render(request, 'Results/Result.html' , { 'Error':'Mising post' } ) 
 
