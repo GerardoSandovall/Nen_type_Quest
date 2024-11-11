@@ -1,3 +1,16 @@
 from django.db import models
+from django.contrib.auth.models import User
 
-# Create your models here.
+class NenPoints(models.Model):
+    Enhancer = models.IntegerField(default=0)
+    Transmutator = models.IntegerField(default=0)
+    Emitter = models.IntegerField(default=0)
+    Conjurer = models.IntegerField(default=0)
+    Manipulator = models.IntegerField(default=0)
+    Specialist = models.IntegerField(default=0)
+    user = models.ForeignKey(User, on_delete=models.CASCADE)
+    answered_fiel = models.BooleanField(default=False)
+    Num_answers= models.IntegerField(default=0)
+
+    def __str__(self):
+        return f"{self.user.username} - Nen Points"

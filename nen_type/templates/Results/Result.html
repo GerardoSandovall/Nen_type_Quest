@@ -1,0 +1,69 @@
+{% extends 'Nav/Navegacion.html' %}
+{% load static %}
+
+{% block content %}
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Resultado de Tipo de Nen</title>
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}">
+</head>
+
+<body>
+    <div class="result-popup" id="resultPopup">
+        <span class="icon">🔮</span>
+        {% if Key == 'Enchancer' %}
+        <h2>Tu tipo de Nen: Reforzador</h2>
+        <p>Tu afinidad es con el tipo de Nen Reforzador, el más poderoso en términos de fuerza física. Los Reforzadores pueden aumentar las propiedades naturales de su cuerpo o de objetos con su aura, dándoles mayor resistencia, velocidad o durabilidad.</p>
+        <p>Este tipo de Nen se suele encontrar en personas decididas, honestas y trabajadoras, que valoran la acción directa sobre las palabras y prefieren las soluciones prácticas a los problemas.</p>
+        <p>  Si eres un Reforzador, es probable que en tu vida cotidiana tengas una gran determinación y una actitud honesta que inspira confianza. Tiendes a ser alguien en quien los demás pueden confiar y que prefiere resolver los problemas de frente.</p> 
+        {% endif %}
+
+        {% if Key == 'Emitter' %}
+        <h2>Tu tipo de Nen: Emisor</h2>
+        <p>Felicidades, tienes afinidad con el tipo de Nen Emisor. Este tipo de Nen se caracteriza por la capacidad de proyectar su aura hacia el exterior, permitiéndote desprenderla de tu cuerpo sin perder el control sobre ella.</p>
+        <p>Los Emisores suelen ser personas con una naturaleza directa, enérgica y a veces impulsiva. Tu aura tiene una gran capacidad para moverse en línea recta y mantener su fuerza en el proceso, lo que te convierte en alguien adecuado para técnicas de ataque a distancia.</p>
+        <p> En tu vida diaria, esta afinidad se traduce en una inclinación a expresar tus pensamientos y emociones de forma clara y sin rodeos, buscando siempre soluciones rápidas y efectivas.</p> 
+        {% endif %}
+        
+        {% if Key == 'Transmutator' %}
+        <h2>Tu tipo de Nen: Transformador</h2>
+        <p>Eres un Transformador, un tipo de Nen especial que se distingue por la habilidad de cambiar las propiedades de tu aura. Los Transformadores pueden hacer que su aura adquiera cualidades que normalmente no tendría, como cambiar su textura, temperatura, o incluso apariencia.</p>
+        <p>Este tipo de Nen suele estar asociado a personas imaginativas, versátiles y un tanto impredecibles. Si tienes esta afinidad, es probable que en tu vida diaria te guste explorar nuevas ideas y caminos poco convencionales.</p>
+        <p>  Eres adaptable y creativo, y tienes una habilidad natural para pensar fuera de lo común, lo cual te permite enfrentar desafíos de maneras únicas e innovadoras.</p>
+        {% endif %}
+
+        {% if Key == 'Manipulator' %}
+        <h2>Tu tipo de Nen: Manipulador</h2>
+        <p>Tienes el tipo de Nen Manipulador, una afinidad que te da la capacidad de controlar objetos, seres o incluso pensamientos ajenos con tu aura. Este tipo de Nen suele pertenecer a personas de mente lógica, organizadas y, a veces, obstinadas.</p>
+        <p> Si eres un Manipulador, probablemente valoras el orden y la consistencia en tu vida y te gusta llevar un control meticuloso de lo que te rodea. En el combate, un Manipulador puede influir directamente en los movimientos de su oponente o en el comportamiento de ciertos objetos, lo que requiere un gran control mental y paciencia.</p>
+        <p> En el día a día, esta afinidad podría reflejarse en tu habilidad para persuadir a los demás o gestionar proyectos de forma eficiente.</p> 
+        {% endif %}
+
+        {% if Key == 'Conjurer' %}
+        
+        <h2>Tu tipo de Nen: Conjurador</h2>
+        <p>Eres un Conjurador, un tipo de Nen que te permite materializar objetos físicos usando tu aura. Los Conjuradores suelen ser individuos meticulosos, introspectivos y muy detallistas, con una gran habilidad para la planificación. Si tienes esta afinidad, eres alguien que valora la precisión y tiene una inclinación natural hacia el análisis profundo y la previsión.</p>
+        <p>En combate, un Conjurador puede crear herramientas o armas con su aura, diseñadas específicamente para situaciones concretas.</p>
+        <p>En el ámbito personal, probablemente eres alguien que disfruta trabajar con claridad de propósito y estructurar bien cada paso antes de actuar.</p>
+        {% endif %} 
+
+        {% if Key == 'Specialist' %}
+        <h2>Tu tipo de Nen: Especialista</h2>
+        <p>Tienes el tipo de Nen Especialista, el más raro y único de todos. Los Especialistas pueden desarrollar habilidades completamente distintas de los otros tipos de Nen, lo cual les da una gran versatilidad, aunque a menudo resulta en habilidades más difíciles de categorizar o controlar.</p>
+        <p>Las personas con afinidad de Especialista suelen ser carismáticas, intuitivas y, a veces, difíciles de comprender, ya que tienen una manera de ver el mundo que se sale de lo común. Esta afinidad refleja una gran independencia de pensamiento y un fuerte sentido de identidad.</p>
+        <p>En la vida diaria, probablemente seas alguien con una gran capacidad para influir en los demás, y que valora la libertad personal y la originalidad en todo lo que haces.</p>    
+
+        {% endif %}
+        
+        
+       
+    </div>
+</body>
+
+<button onclick="showResult()">Mostrar Tipo de Nen</button>
+
+<script src="{% static 'js/script.js' %}"></script>
+{% endblock %}
+
+    
