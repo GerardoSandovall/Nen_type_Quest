@@ -147,14 +147,12 @@ def Results(request):
     if request.method == 'GET':
         nen_points.Emitter
 
-        Scores_Names = [('Enchancer', nen_points.Enhancer), ('Emitter', nen_points.Emitter),('Transmutator', nen_points.Transmutator), ('Manipulator', nen_points.Manipulator),('Conjurer', nen_points.Conjurer) ,('Especialist', nen_points.Specialist)] 
+        Scores_Names = [('Enchancer', nen_points.Enhancer), ('Emitter', nen_points.Emitter),('Transmutator', nen_points.Transmutator), ('Manipulator', nen_points.Manipulator),('Conjurer', nen_points.Conjurer) ,('Specialist', nen_points.Specialist)] 
 
         maxPoints = max(Scores for _, Scores in Scores_Names)
     
-    # Filtra los puntajes que igualan al puntaje máximo
         sameValue = [Names for Names, Scores in Scores_Names if Scores == maxPoints]
     
-    # Selecciona al azar uno de los empatados
         selected = random.choice(sameValue)
     
 
